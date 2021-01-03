@@ -1,0 +1,133 @@
+<html>
+	<head>
+		<title></title>
+		<link rel="stylesheet" href="css/ui-lightness/jquery-ui-1.10.4.custom.min.css">
+		<style type="text/css">
+			body
+			{
+				color:#025c7f;
+				font-family:Georgia,arial,verdana;
+				width:700px;
+				margin:0 auto;
+			}
+			.container
+			{
+				margin:0 auto;
+				font-size:14px;
+				position:relative;
+				width:700px;
+				text-align:justify;	
+			}
+			#textBlock
+			{
+				color:#000000;
+				background-color: #ffffff;
+			}
+			.ui-state-highlight
+			{
+				padding: 10px;
+				background: none;
+			}
+			.controlsContainer
+			{
+			    border: 1px solid;
+			    margin: 0;
+			    padding: 0;
+			    width: 100%;
+			    float: left;
+			}
+			.controlsContainer li 
+			{
+			    display: inline-block;
+			    float: left;
+			    padding: 0 0 0 50px;
+			    width: 299px;
+			}
+			.controlsContainer div.ui-slider
+			{
+			    margin: 15px 0 0;
+			    width: 200px;
+			    float:left;
+			}
+			.left 
+			{
+				border-right: 1px solid;
+			}
+			.clear
+			{
+				clear: both;
+			}
+
+			.red .ui-slider-range { background: #ff0000; }
+			.green .ui-slider-range { background: #00ff00; }
+			.blue .ui-slider-range { background: #0000ff; }
+
+			.ui-spinner
+			{
+			    height: 20px;
+			    line-height: 1px;
+			    margin: 11px 0 0 15px;
+		    }
+			input[type=text]
+			{
+				margin-top: 0;
+    			width: 30px;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="container">
+			<div class="ui-state-highlight" id="textBlock">
+				<p>
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+					tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+					quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+					consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+					cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+					proident, sunt in culpa qui officia deserunt mollit anim id est laborum. 
+				</p>
+				<p>
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+					tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+					quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+					consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+					cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+					proident, sunt in culpa qui officia deserunt mollit anim id est laborum. 
+				</p>
+				<p>
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+					tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+					quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+					consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+					cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+					proident, sunt in culpa qui officia deserunt mollit anim id est laborum. 
+				</p>
+			</div>
+
+			<div class="clear">&nbsp;</div>
+
+			<ul class="controlsContainer">
+				<li class="left">
+					<div id="txtRed" class="red slider" data-spinner="sptxtRed" data-type="text"></div><input type="text" value="0" id="sptxtRed" data-slider="txtRed" readonly="readonly" />
+					<div id="txtGreen" class="green slider" data-spinner="sptxtGreen" data-type="text"></div><input type="text" value="0" id="sptxtGreen" data-slider="txtGreen" readonly="readonly"  />
+					<div id="txtBlue" class="blue slider" data-spinner="sptxtBlue" data-type="text"></div><input type="text" value="0" id="sptxtBlue" data-slider="txtBlue" readonly="readonly"  />
+
+					<div class="clear">&nbsp;</div>
+					Text Color : <span>#000000</span>
+				</li>
+				<li class="right">
+					<div id="bgRed" class="red slider" data-spinner="spBgRed" data-type="bg" ></div><input type="text"  value="255" id="spBgRed" data-slider="bgRed" readonly="readonly"  />
+					<div id="bgGreen" class="green slider" data-spinner="spBgGreen" data-type="bg" ></div><input type="text" value="255" id="spBgGreen" data-slider="bgGreen" readonly="readonly"   />
+					<div id="bgBlue" class="blue slider" data-spinner="spBgBlue" data-type="bg" ></div><input type="text" value="255" id="spBgBlue" data-slider="bgBlue" readonly="readonly" />
+
+					<div class="clear">&nbsp;</div>
+					Background Color : <span>#ffffff</span>
+				</li>
+			</ul>
+		</div>
+		<script src="js/jquery-1.10.2.js"></script>
+		<script src="js/jquery-ui-1.10.4.custom.min.js"></script>
+		<script src="js/colorpicker.js"></script>
+
+	</body>
+</html>

@@ -1,0 +1,178 @@
+<html>
+	<head>
+        <meta charset="utf-8">
+        <title>MyjqReddit</title>
+        <link rel="stylesheet" href="css/ui-lightness/jquery-ui-1.10.4.custom.min.css">
+		<style type="text/css">
+			body
+			{
+				font-family:arial,verdana;
+				font-size:12px;
+				margin: 0px auto; 
+				width: 900px;
+			}
+			div#redditTabs
+			{
+				border: 1px solid #000;
+				float:left;
+				margin:10px auto 0;
+				padding:10px;
+				width: 100%;
+			}
+			
+			a
+			{
+				text-decoration:underline;
+			}
+
+			.ui-tabs-panel .ui-icon 
+			{
+				float:left;
+			}
+			
+			.extras 
+			{ 
+				clear: both;
+				padding-bottom: 20px;
+			}
+			
+			.extras a 
+			{
+				border: 1px solid #A2A2A2;
+				cursor: pointer;
+				display: block;
+				float: left;
+				margin-left: 5px;
+				text-decoration: none;
+				width: 140px;
+			}
+			
+			.postTitle
+			{
+				display: block; 
+				padding: 5px 0px 5px 5px;
+				font-weight:bold;
+			}
+			
+			.postTitle a 
+			{
+				color:#07c;
+				text-decoration:none;
+			}
+			
+			.postList
+			{
+				list-style: none;
+				margin: 0;
+				padding: 0 0 0 10px;
+				width: 100%;
+			}
+			
+			.postList li 
+			{
+				background:none #fff;
+				margin:5px 0;
+				padding:5px;
+			}
+			
+			.postDescription
+			{
+				border-top:1px solid #ddd;
+				margin-top:5px;
+				padding:5px 0 5px 5px;
+				display:none;
+			}
+			
+			.postDescription a 
+			{ 
+				color:#07c;
+			}
+			
+			.ui-icon-close
+			{ 
+				float:left; margin-top:5px;cursor:pointer;
+			}
+			
+			small 
+			{ 
+				font-size:12px; 
+			}
+			
+			.comments 
+			{
+				background-color: #eee;
+				list-style: none outside none;
+				margin-bottom: 5px;
+				margin-right: 0;
+				margin-top: 5px;
+				padding: 2px 0;
+			}
+			
+			.comments a.username 
+			{ 
+				color: #ff0000;
+			}
+			
+			.comment 
+			{
+				background-color: #FFFFFF;
+				border-color: #5D5D5D;
+				border-image: none;
+				border-style: dotted dotted none;
+				border-width: 1px 1px 0;
+				margin-bottom: 10px;
+				padding: 0 10px 2px;
+			}
+			
+			.hide 
+			{
+				display:none;
+			} 
+			
+			#dialog 
+			{ 
+				display:none; 
+			}
+			
+			.clear 
+			{
+				clear:both;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="redditTabs">
+			<ul id="tabList">
+				<li><a href="#tabs-1">Welcome</a></li>
+			</ul>
+			<div id="tabs-1">
+				<h2>Welcome to MyjqReddit</h2>
+				<p>
+					Please enter the name of any subreddit in textbox and click the <strong>Add It</strong> button. The subreddit contents will be loaded in a new tab.
+					<br/>
+					You can click the comments for a post by clicking the <strong>"View Comments"</strong> link under the post title.
+				</p>
+
+				<label for="subredditName">Enter a subreddit name : </label>
+				<input type="text" id="subredditName" name="subredditName" value="" class="ui-widget-content ui-corner-all"> 
+				<button id="addNewSubreddit" type="button">Add it</button> 
+				<hr/>
+				<strong>To start with, you can try any of these subreddit names : </strong><small>webdev, technology, AskReddit, IAMA, india, worldnews</small>
+				<hr/>
+				<div class="ui-widget" id="errorContainer" style="display:none;">
+					<div class="ui-state-error ui-corner-all">
+						<span class="ui-icon ui-icon-alert"></span>
+						<div id="errorMessage"></div>
+					</div>
+				</div>
+
+			</div>
+		</div>
+
+		<div id="dialog"></div>
+
+		<script src="js/jquery-1.10.2.js"></script>
+		<script src="js/jquery-ui-1.10.4.custom.min.js"></script>
+		<script src="js/myReddit.js" type="text/javascript"></script>
+	</body>
+</html>

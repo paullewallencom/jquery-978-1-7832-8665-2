@@ -1,0 +1,232 @@
+<html>
+	<head>
+        <meta charset="utf-8">
+        <title>Creating a Website Tour</title>
+        <link rel="stylesheet" href="css/ui-lightness/jquery-ui-1.10.4.custom.min.css">
+		<style type="text/css">
+			body
+			{
+				font-family:arial,verdana;
+				font-size:12px;
+				margin: 0px auto; 
+				width: 900px;
+			}
+			div.container
+			{
+				border: 1px solid #000;
+				float:left;
+				margin:10px auto 0;
+				padding:10px;
+				width: 100%;
+			}
+			.header
+			{
+				height: 100px; border: 1px solid;
+			}
+			
+			#logo 
+			{
+				border: 1px solid #000000;
+				float: left;
+				font-weight: bold;
+				height: 57px;
+				margin: 5px;
+				padding-top: 30px;
+				text-align: center;
+				width: 100px;
+			}
+			
+			ul.topLinks 
+			{
+				float: right;
+				list-style: none outside none;
+				margin: 20px 20px 0 0;
+				padding: 0;
+				text-align: right;
+				width: 70%;
+			}
+			ul.topLinks li 
+			{
+				display: inline-block;
+				margin: 0;
+				padding: 0;
+				text-decoration: underline;
+				width: 15%;
+				cursor:pointer;
+			}
+
+			#startTour 
+			{ 
+				color: #ff0000;
+			}
+			
+			.leftCol
+			{
+				border: 1px solid #000; 
+				float:left;
+				min-height:500px;
+				width:25%;
+			}
+			.rightCol
+			{
+				border: 1px solid #000; 
+				float: right;
+				min-height:690px;
+				width: 74%; 
+			}
+			ul#menu {
+				list-style:none;
+				margin:0;
+				padding:0;
+			}
+			
+			ul#menu > li 
+			{
+				padding:10px 5px 10px 10px;
+				border-top: 1px solid #000;
+				cursor:pointer;
+				font-weight:bold;
+
+			}
+			ul#menu > li:last-child
+			{
+				border-bottom: 1px solid #000;
+			}
+			#accordion
+			{
+				width:80%;
+				float:left;
+				padding:10px 5px;
+			}
+			
+			#cart 
+			{
+				    border: 1px solid #000000;
+					float: right;
+					font-weight: bold;
+					height: 65px;
+					margin-right: 5px;
+					margin-top: 12px;
+					padding-top: 35px;
+					text-align: center;
+					width: 100px;
+			}
+			a { text-decoration:none; }
+			
+			.submenu li 
+			{
+				padding:5px;
+			}
+			small { font-weight:normal; }
+			
+			.empty { height:150px;}
+			
+			footer 
+			{ 
+				border: 1px solid; 
+				padding: 10px 0px;
+			} 
+			
+			#dialog { display:none; }
+
+			.clear {clear:both;}
+		</style>
+	</head>
+	<body>
+<div id="dialog"></div>
+		<div class="container">
+			<div class="header">
+				<div id="logo">Cats and Dogs Store</div>
+				<ul class="topLinks">
+					<li>Home</li>
+					<li>About Us</li>
+					<li id="contact">Contact Us</li>
+					<li id="startTour" title="Click to start Tour">Take a Tour</a></li>
+				</ul>
+			</div>
+			<div class="clear">&nbsp;</div>
+			<div class="leftCol">
+				<ul id="menu">
+					<li>Home</li>
+					<li><small>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde magnam illum tempore eum a minima quisquam sunt sequi facere maxime in vel voluptates ea veritatis repellat at est natus quod.</small></li>
+					<li id="orders">Orders
+						<ul class="submenu">
+							<li><a>All Orders</a></li>
+							<li><a>Track Order</a></li>
+							<li><a>Another item</a></li>
+						</ul>
+
+					</li>
+					<li><small>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde magnam illum tempore eum a minima quisquam sunt sequi facere maxime in vel voluptates ea veritatis repellat at est natus quod.</small></li>
+					
+					<li id="profile">Profile</li>
+					
+					<li><small>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde magnam illum tempore eum a minima quisquam sunt sequi facere maxime in vel voluptates ea veritatis repellat at est natus quod.</small></li>
+					
+					<li id="help">Help</li>
+					<li class="empty"><small>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde magnam illum tempore eum a minima quisquam sunt sequi facere maxime in vel voluptates ea veritatis repellat at est natus quod.</small></li>
+					<li id="lastLink">Last Link</li>
+				</ul>
+			</div>
+			<div class="rightCol">
+				<div id="accordion">
+				  <h3 id="section1">Cat Posters</h3>
+				  <div>
+					<p>
+					Cat posters available in different categories.<br>
+					Mauris mauris ante, blandit et, ultrices a, suscipit eget, quam. Integer
+					ut neque. Vivamus nisi metus, molestie vel, gravida in, condimentum sit
+					amet, nunc. Nam a nibh. Donec suscipit eros. Nam mi. Proin viverra leo ut
+					odio. Curabitur malesuada. Vestibulum a velit eu ante scelerisque vulputate.
+					<ul>
+						<li>Cat 1</li>
+						<li>Cat 1</li>
+						<li>Cat 1</li>
+					</ul>
+					</p>
+				  </div>
+				  <h3 id="section2">Dog Posters</h3>
+				  <div>
+					<p>
+					Dog posters available in different categories.<br>
+					Mauris mauris ante, blandit et, ultrices a, suscipit eget, quam. Integer
+					ut neque. Vivamus nisi metus, molestie vel, gravida in, condimentum sit
+					amet, nunc. Nam a nibh. Donec suscipit eros. Nam mi. Proin viverra leo ut
+					odio. Curabitur malesuada. Vestibulum a velit eu ante scelerisque vulputate.
+					<ul>
+						<li>Cat 1</li>
+						<li>Cat 1</li>
+						<li>Cat 1</li>
+					</ul>
+					</p>
+				  </div>
+				  <h3 id="section3">Videos</h3>
+				  <div>
+					<p>
+					Videos available in different categories.<br>
+					Mauris mauris ante, blandit et, ultrices a, suscipit eget, quam. Integer
+					ut neque. Vivamus nisi metus, molestie vel, gravida in, condimentum sit
+					amet, nunc. Nam a nibh. Donec suscipit eros. Nam mi. Proin viverra leo ut
+					odio. Curabitur malesuada. Vestibulum a velit eu ante scelerisque vulputate.
+					<ul>
+						<li>Cat 1</li>
+						<li>Cat 1</li>
+						<li>Cat 1</li>
+					</ul>
+					</p>
+				  </div>
+
+				</div>
+				<div id="cart">2 items</div>
+			</div>
+			<div class="clear">&nbsp;</div>
+			<footer>
+				
+			</footer>	
+		</div>
+
+		<script src="js/jquery-1.10.2.js"></script>
+		<script src="js/jquery-ui-1.10.4.custom.min.js"></script>
+		<script src="js/tour.js" type="text/javascript"></script>
+	</body>
+</html>

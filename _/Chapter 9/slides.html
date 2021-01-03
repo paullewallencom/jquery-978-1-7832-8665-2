@@ -1,0 +1,113 @@
+<html>
+	<head>
+		<title>Slideshow</title>
+		<link rel="stylesheet" href="css/ui-lightness/jquery-ui-1.10.4.custom.min.css">
+		<style type="text/css">
+			body
+			{
+				color:#025c7f;
+				font-family:verdana,arial;
+				width:700px;
+				margin:0 auto;
+			}
+			#slideContainer
+			{
+				margin:0 auto;
+				font-size:20px;
+				position:relative;
+				width:700px;
+				text-align:justify;
+				
+			}
+			.slide 
+			{
+				float:left;
+				padding:10px;
+			}
+			.slide img 
+			{
+				height: 200px; width: 300px; float: left;
+			}
+			.slide p 
+			{
+				display: inline-block; width: 360px; margin-left: 15px;color:#5f5f5f;
+			}
+			a
+			{
+				color:#000;
+				font-size:15px;
+			}
+			
+			/* styles specific to banner rotator */
+			.mywidget-banner
+			{
+			}
+			.mywidget-banner-item
+			{
+			}
+		</style>
+	</head>
+	<body>
+	<p>
+		<button id="btnEnable">Start Slideshow</button>
+		<button id="btnDestroy">Stop Slideshow</button>
+	</p>
+		<div id="slideContainer">
+			<div class="slide ui-state-highlight">
+				<img src="images/1.jpg">
+				<p>Cras congue nisl in tellus placerat luctus. Mauris tempus ante erat, non tempus enim posuere vel. In condimentum orci sem, a vestibulum leo elementum eu. </p>
+				
+			</div>
+			<div class="slide ui-state-highlight special">
+				<img src="images/2.jpg">
+				<p>Ut interdum, massa quis feugiat consectetur, enim ligula varius mi, vitae varius massa elit quis velit. In posuere egestas velit ac molestie. Vestibulum nec dapibus justo. </p>
+				
+			</div>
+			<div class="slide ui-state-highlight">
+				<img src="images/3.jpg">
+				<p>Morbi posuere molestie mauris a ornare. Integer at ipsum vel metus rutrum suscipit at nec ante. Nullam malesuada tempor elementum. Nam nec sollicitudin massa. Pellentesque maximus diam at libero faucibus porttitor. </p>
+				
+			</div>
+			<div class="slide ui-state-highlight">
+				<img src="images/4.jpg">
+				<p>In commodo laoreet mi, congue placerat purus. Cras a feugiat velit. Nunc facilisis ac tortor a consequat. Integer congue purus et hendrerit volutpat. Duis dictum malesuada placerat. </p>
+				
+			</div>
+		</div>
+		<script src="js/jquery-1.10.2.js"></script>
+		<script src="js/jquery-ui-1.10.4.custom.min.js"></script>
+		<script src="js/slides.js"></script>
+
+		<script type="text/javascript">
+		$(document).ready(function()
+		{
+			$('#btnEnable').on('click', function()
+			{
+				
+				$('#slideContainer').slideshow(
+				{
+					duration : 4000,
+					effect : 'clip',
+					easingDuration : 400,
+					beforeShow : function(event, ui)
+					{
+						if(ui.element.hasClass('special'))
+						{
+							ui.element.css({ 'background' : '#ffffff' });
+						}
+					}
+				});
+			});
+			
+			$('#btnDestroy').on('click', function()
+			{
+				$(slideContainer).slideshow('destroy');
+			});			
+
+			$('button').button();
+			
+			
+		});
+		</script>
+	</body>
+</html>

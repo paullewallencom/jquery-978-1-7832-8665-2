@@ -1,0 +1,151 @@
+<html>
+	<head>
+		<title>Searchable Widget</title>
+		<link rel="stylesheet" href="css/ui-lightness/jquery-ui-1.10.4.custom.min.css">
+		<style type="text/css">
+			body
+			{
+				margin:0 auto;
+				font-family:verdana,arial;
+				font-size:12px;width:45%
+			}
+			.tables
+			{
+				border:1px solid #000;
+				margin:0 auto;
+				width:600px;
+				background-color:#acaafc;
+			}
+			.tables th 
+			{
+				color:#fff;
+			}
+			th,td
+			{
+				padding:5px;
+				font-size:12px;
+			}
+			p
+			{
+				background-color:#acaafc;
+				padding:10px;
+			}
+			.even
+			{
+				color:#343234;
+				background-color:#fff;
+			}
+			.odd
+			{
+				color:#343234;
+				background-color:#dcdefc;
+			}
+			
+			/* styles specific to search widget */
+			.mywidget-searchBoxContainer
+			{
+			}
+			.mywidget-searchBoxContainer td 
+			{
+				border:1px solid #fff;
+			}
+			.mywidget-label-search
+			{
+				color:#fff;
+			}
+			.mywidget-textbox
+			{
+			}
+		</style>
+	</head>
+	<body>
+		<p>
+			<button id="btnEnable">Enable Searchable</button>
+			<button id="btnDestroy">Destroy Searchable</button>
+		</p>
+		<table width="100%" id="tblData" class="tables">
+			<tbody>
+			<tr>
+				<th width="10%">#</th>
+				<th width="35%">Place</th>
+				<th width="55%">Tags</th>
+			</tr>
+			<tr>
+				<td class="odd">1</td>
+				<td class="odd">Pithoragarh</td>
+				<td class="odd">Hills, Snow</td>
+			</tr>
+			<tr>
+				<td class="even">2</td>
+				<td class="even">Dhakuri</td>
+				<td class="even">Trekking, Himalayas, Camping</td>
+			</tr>
+			<tr>
+				<td class="odd">3</td>
+				<td class="odd">Goa</td>
+				<td class="odd">Beach, Fun, Holidays</td>
+			</tr>
+			<tr>
+				<td class="even">4</td>
+				<td class="even">Nainital</td>
+				<td class="even">Snow, Lake, Hills</td>
+			</tr>
+			<tr>
+				<td class="odd">5</td>
+				<td class="odd">Dayara Bugyal</td>
+				<td class="odd">Trekking, Camping</td>
+			</tr>
+			<tr>
+				<td class="even">6</td>
+				<td class="even">Mumbai</td>
+				<td class="even">Beach, Bollywood</td>
+			</tr>
+			<tr>
+				<td class="odd">7</td>
+				<td class="odd">Agra</td>
+				<td class="odd">Taj Mahal, Holiday</td>
+			</tr>
+			<tr>
+				<td class="even">8</td>
+				<td class="even">Ranikhet</td>
+				<td class="even">Sunset, Hills</td>
+			</tr>
+			<tr>
+				<td class="odd">9</td>
+				<td class="odd">Auli</td>
+				<td class="odd">Skiing, Snow, Honeymoon</td>
+			</tr>
+			<tr>
+				<td class="even">10</td>
+				<td class="even">Chopta</td>
+				<td class="even">Trekking, Honeymoon</td>
+			</tr>
+			</tbody>
+		</table>
+
+		<script src="js/jquery-1.10.2.js"></script>
+		<script src="js/jquery-ui-1.10.4.custom.min.js"></script>
+		<script src="js/searchable.js"></script>
+
+		<script type="text/javascript">
+			$(document).ready(function()
+			{
+				$('#btnEnable').on('click', function()
+				{
+					$('#tblData').searchable(
+					{
+						characterLength : 2,
+						searchLabel : 'Type at least 2 characters to search : '
+					});
+				});
+				
+				$('#btnDestroy').on('click', function()
+				{
+					$('#tblData').searchable('destroy');
+				});			
+
+				$('button').button();
+			});
+		</script>
+	</body>
+</html>

@@ -1,0 +1,222 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>Dashboard</title>
+		<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+		<link rel="stylesheet" href="css/ui-lightness/jquery-ui-1.10.4.custom.min.css">
+		<style>
+		body 
+		{
+			font-family:arial,verdana;
+			font-size:12px;
+			margin: 0px auto; 
+			width: 800px;
+		}
+		.column 
+		{
+			width: 400px;
+			float: left;
+			padding-bottom: 100px;
+		}
+		.portlet 
+		{
+			margin: 0 1em 1em 0;
+			padding: 0.3em;
+		}
+		.portlet-header 
+		{
+			padding: 0.2em 0.3em;
+			margin-bottom: 0.5em;
+			position: relative;
+		}
+		.portlet-toggle 
+		{
+			position: absolute;
+			top: 50%;
+			right: 0;
+			margin-top: -8px;
+			cursor:pointer;
+		}
+		.portlet-content 
+		{
+			height: 250px;
+			overflow-y: scroll;
+			padding: 0.4em;	
+		}
+		.portlet-placeholder 
+		{
+			border: 1px dotted black;
+			margin: 0 1em 1em 0;
+			height: 250px;
+		}
+		
+		.shareBox
+		{
+			text-align:center;
+			overflow:hidden !important;
+			height:auto !important;
+		}
+
+		.shareBox a 
+		{
+			background: none repeat scroll 0 0 #f6a828;
+			border-radius: 35px;
+			color: #fff;
+			display: inline-block;
+			font-size: 25px;
+			font-weight: bold;
+			padding: 5px;
+			text-align: center;
+			width: 35px;
+			height:35px;
+		}
+		ul 
+		{
+			list-style: outside none none;
+			margin: 0;
+			padding: 0;
+		}
+		.flickrPics li 
+		{
+			height: 100px;
+			overflow: hidden;
+			padding: 5px 0;
+		}
+		.flickrPics li img 
+		{
+			float: left;
+			margin-right: 5px;
+			max-height: 100px;
+		}
+
+		#reddit ul 
+		{
+			list-style: outside none none;
+			margin: 0;
+			padding: 0;
+		}
+		#reddit li , #weatherInfo li
+		{
+			padding: 5px 0;
+			min-height:20px;
+		}
+		
+		#reddit li  span 
+		{
+			text-decoration:underline;
+		}
+		#reddit a 
+		{
+			text-decoration:none;
+		}
+		
+		#reddit a.comments
+		{
+			text-decoration:underline;
+		}
+		
+		#weatherInfo label 
+		{
+			font-weight:bold;
+			width:100px;
+			display:block;
+			float:left;
+		}
+		#weatherInfo span 
+		{
+			float:left;
+		}
+		
+		#thumbnail 
+		{
+			cursor:pointer;
+			text-align:center;
+		}
+		#thumbnail  img 
+		{
+			max-width:300px;
+		}
+		</style>
+	</head>
+	<body>
+		<div class="column">
+			<div class="portlet">
+				<div class="portlet-header">Share this page</div>
+				<div class="shareBox portlet-content">
+					<a href="#" type="fb">
+						<i class="fa fa-facebook"></i>
+					</a>
+					<a href="#" type="tweet">
+						<i class="fa fa-twitter"></i>
+					</a>
+					<a href="#" type="reddit">
+						<i class="fa fa-reddit"></i>
+					</a>
+					<a href="#" type="gplus">
+						<i class="fa fa-google-plus"></i>
+					</a>
+				</div>
+			</div>
+			<div class="portlet">
+				<div class="portlet-header">Recent photos tagged "cat"</div>
+				<div class="portlet-content flickrPics">
+					<ul id="pics"></ul>
+				</div>
+			</div>
+			<div class="portlet">
+				<div class="portlet-header">Today's Weather</div>
+				<div class="portlet-content">
+					<select id="selCity"></select>
+					<p id="loadingWeather">Loading...</p>
+					<div id="weatherInfo">
+						<ul>
+							<li>
+								<label> Temp: </label> 
+								<span id="temp"></span>
+							</li>
+							<li>
+								<label> Temp min: </label>
+								<span id="tempMin"></span>
+							</li>
+							<li>
+								<label> Temp max: </label>
+								<span id="tempMax"></span>
+							</li>
+							<li>
+								<label> Cloudiness: </label>
+								<span id="cloudiness"></span>
+							</li>
+							<li>
+								<label> Location: </label>
+								<span id="location"></span>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+
+		</div>
+
+		<div class="column">
+			<div class="portlet">
+				<div class="portlet-header">reddit : top items</div>
+				<div class="portlet-content" id="reddit">
+				</div>
+			</div>
+			<div class="portlet">
+				<div class="portlet-header">Just some images</div>
+				<div class="portlet-content">
+					Select image : <select id="imageSelector"></select>
+					<div id="thumbnail"></div>
+				</div>
+			</div>
+		</div>
+		
+		<div id="dialog"></div>
+
+		<script src="js/jquery-1.10.2.js"></script>
+		<script src="js/jquery-ui-1.10.4.custom.min.js"></script>
+		<script src="js/dashboard.js"></script>
+	</body>
+</html>

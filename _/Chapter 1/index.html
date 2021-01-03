@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Designing a simple quiz application</title>
+        <link rel="stylesheet" href="css/ui-lightness/jquery-ui-1.10.4.custom.min.css">
+		<style type="text/css">
+			body
+			{
+				font-family:arial,verdana;
+				font-size:12px;
+				margin: 0px auto; 
+				width: 600px;
+			}
+
+			div.container
+			{
+				border: 1px solid #000;
+				float:left;
+				margin:0 auto;
+				padding:10px;
+				width: 100%;
+			}
+
+			#leftCol
+			{
+				float:left;
+			}
+
+			#rightCol
+			{
+				float:right;
+			}
+
+			ul
+			{
+				list-style:none;
+				margin:0;
+				padding:0;
+				width:50%;
+			}
+			
+			li
+			{
+				border:1px solid #000;
+				font-weight:bold;
+				margin:5px 0;
+				padding:10px 0;
+				text-align:center;
+				width:175px;
+			}
+			
+			#source li 
+			{
+				cursor:move;
+			}
+
+			#score
+			{
+				font-weight:bold;
+				float:left;
+				color:#ff0000;
+			}
+			
+			#reset
+			{
+				color:#ff0000;
+				cursor:pointer;
+				font-weight:bold;
+				text-align:right;
+				text-decoration:underline;
+				float:right;
+			}
+			
+			.clear
+			{
+				clear:both;
+			}
+
+			#dialog-complete
+			{
+				display:none;
+			}
+			
+			#dialog-complete span
+			{
+				float:left;
+				margin:0 7px 20px 0;
+			}
+		</style>
+    </head>
+    <body>
+		<div class="container">
+			<span id="score"></span>
+			<button id="reset" type="button">Reset</button>
+			<div class="clear"></div>
+			<hr/>
+			<div id="leftCol">
+				<ul id="source">
+				</ul>
+			</div>
+			<div id="rightCol">
+				<ul id="target">
+				</ul>
+			</div>
+		</div>
+
+		<div id="dialog-complete" title="Well Done!">
+		  <p><span class="ui-icon ui-icon-check"></span>
+		  Well done. You have completed the quiz successfully.</p>
+		</div>		
+		
+		<script src="js/jquery-1.10.2.js"></script>
+		<script src="js/jquery-ui-1.10.4.custom.min.js"></script>
+		<script src="js/quiz.js"></script>
+		
+		
+	</body>
+</html>

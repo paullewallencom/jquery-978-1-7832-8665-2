@@ -1,0 +1,107 @@
+<html>
+	<head>
+        <meta charset="utf-8">
+        <title>Google Maps with jQuery UI</title>
+        <link rel="stylesheet" href="css/ui-lightness/jquery-ui-1.10.4.custom.min.css">
+		<style type="text/css">
+			body
+			{
+				font-family:arial,verdana;
+				font-size:12px;
+				margin: 0px auto; 
+				width: 100%;
+			}
+			.left 
+			{
+				height:600px;
+				width:20%;
+				border: 1px solid #333;
+				float:left;
+				padding:5px;
+				margin-left:10px;
+			}
+			.ui-accordion .ui-accordion-content
+			{
+				padding:10px;
+			}
+			
+			#slider 
+			{
+				margin-left:10%; 	
+				width:80%;
+			}
+			.right
+			{
+				height:610px;
+				width:77%;
+				border: 1px solid #333;
+				float:right;
+				margin-right:10px;
+			}
+			.clear 
+			{
+				clear:both;
+			}
+		</style>
+	</head>
+	<body>
+		<div>
+			<div class="left" >
+				<div class="ui-state-highlight ui-corner-all" style="padding: 7px;">
+					<strong>Filter by Price:</strong>
+					<span id="currentRange"></span>
+					<div class="clear">&nbsp;</div>
+					<div id="slider"> </div>
+				</div>
+				
+				<div class="clear">&nbsp;</div>
+				
+				<div class="ui-state-highlight ui-corner-all" style="padding: 5px;">
+					<p>
+						<strong>Zoom Level:</strong>
+						<input id="spinner" value="12" readonly="readonly"/>
+					</p>
+				</div>
+				
+				<div class="clear">&nbsp;</div>
+				
+				<div id="listing">
+				</div>
+				
+			</div>
+			
+			<div class="right" id="hotelsMap"></div>
+			
+			<div id="tabs" style="display:none;">
+			  <ul>
+				<li><a href="#info">Info</a></li>
+				<li><a href="#facilities">Facilities</a></li>
+				<li><a href="#attractions">Attractions</a></li>
+			  </ul>
+			  <div id="info">
+				Proin elit arcu, rutrum commodo, vehicula tempus, commodo a, risus. Curabitur nec arcu. Donec sollicitudin mi sit amet mauris. Nam elementum quam ullamcorper ante. Etiam aliquet massa et lorem. Mauris dapibus lacus auctor risus. Aenean tempor ullamcorper leo. Vivamus sed magna quis ligula eleifend adipiscing. Duis orci. Aliquam sodales tortor vitae ipsum. Aliquam nulla. Duis aliquam molestie erat. Ut et mauris vel pede varius sollicitudin. Sed ut dolor nec orci tincidunt interdum. Phasellus ipsum. Nunc tristique tempus lectus.
+			  </div>
+			  <div id="facilities">
+				<ol>
+					<li>High Speed Internet</li>
+					<li>Health Club</li>
+					<li>Airport pickup and drop</li>
+					<li>Bar</li>
+					<li>Cultural Activities</li>
+				</ol>
+			  </div>
+			  <div id="attractions">
+				<ol>
+					<li>International Airport - 45 minutes/16.00 Kms</li>
+					<li>New Delhi Railway Station - 10 minutes/3.00 Kms</li>
+				</ol>
+			  </div>
+			</div>
+		</div>
+		
+		<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBWaewUDw3iHdCa9VpTdyHkk8C80R2bjZ4"></script>
+		<script src="js/jquery-1.10.2.js"></script>
+		<script src="js/jquery-ui-1.10.4.custom.min.js"></script>
+		<script src="js/myMap.js"></script>
+	</body>
+</html>
